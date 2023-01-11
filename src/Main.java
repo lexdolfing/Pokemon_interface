@@ -10,7 +10,7 @@ public class Main {
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
 
-    // Dit zijn de Pokemons die je tot je beschikking hebt
+    // Dit zijn de Pokémon die je tot je beschikking hebt
     private static final FirePokemon charizard = new FirePokemon("Charrizard", 76, 150, "firenougats", "GRRRRRRRRRRRRRRR");
     private static final WaterPokemon blastoise = new WaterPokemon("Blastoise", 40, 110, "Pokeflakes", "Blaaaaasssssstooooiiiiissss");
     private static final GrassPokemon venusaur = new GrassPokemon("Venusaur", 50, 135, "Pokeleafs", "Veeeeeeeeennnnnuuuuuusaur");
@@ -29,8 +29,8 @@ public class Main {
         System.out.println("First player please enter your name: ");
         String userA = speler_A.nextLine();
         PokemonTrainer player1 = new PokemonTrainer(userA, pokemons);
-        System.out.println("To start your game, we have given you 6 Pokemons use");
-        System.out.println("these are the Pokemons you get:");
+        System.out.println("To start your game, we have given you 6 Pokemons to use");
+        System.out.println("these are the Pokemons you get: ");
         pokemonGym.printPokemon(pokemons);
         System.out.println("Would you like to enter a gym looking for a fight?");
         System.out.println("Please enter yes or no");
