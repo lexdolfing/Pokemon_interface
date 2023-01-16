@@ -8,7 +8,7 @@ public class WaterPokemon extends Pokemon{
 
     List<String> attacks = Arrays.asList("surf","hydropump","hydrocanon","raindance");
     public WaterPokemon(String name, int level, int hp, String food, String sound) {
-        super(name, level, hp, food, sound, "water");
+        super(name, level, hp, food, sound, "Water");
     }
 
     @Override
