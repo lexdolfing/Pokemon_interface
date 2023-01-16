@@ -1,35 +1,33 @@
+import java.util.List;
+
 public class PokemonTrainer {
-    private String ownerName;
-    private String town;
-    private List<Pokemon> pokemons;
+    protected String name;
+    protected List<Pokemon> pokemons;
 
 
-
+    public PokemonTrainer(String name, List<Pokemon> pokemons){
+        this.name = name;
+        this.pokemons = pokemons;
+    }
 
 
 
     //getters en setters
 
 
-    public String getOwnerName() {
-        return ownerName;
+    public String getName() {
+        return name;
     }
 
-    public String getTown() {
-        return town;
-    }
 
     public List<Pokemon> getPokemons() {
         return pokemons;
     }
 
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
+    public void setName(String ownerName) {
+        this.name = name;
     }
 
-    public void setTown(String town) {
-        this.town = town;
-    }
 
     public void setPokemons(List<Pokemon> pokemons) {
         this.pokemons = pokemons;

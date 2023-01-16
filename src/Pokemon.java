@@ -48,6 +48,10 @@ public abstract class Pokemon {
         return type;
     }
 
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
     public void setPokemons(List<Pokemon> pokemons) {
         this.pokemons = pokemons;
     }

@@ -54,8 +54,11 @@ public class PokemonGymImpl implements PokemonGym {
 
             System.out.println("Its " + owner.getName() + "'s turn to attack");
             gymOwnerAttacks(gymPokemon, pokemon);
+            System.out.println(pokemon.getName() + " has now " + pokemon.getHp() + "  HP left");
             System.out.println("Its " + trainer.getName() + "'s turn to attack");
             attackOrChange(pokemon, gymPokemon, trainer, owner);
+            System.out.println(gymPokemon.getName() + " has now " + gymPokemon.getHp() + " HP left");
+
 
         }
         if(pokemon.getHp() <= 0){
@@ -116,19 +119,19 @@ public class PokemonGymImpl implements PokemonGym {
         Scanner speler_A = new Scanner(System.in);
         String type = p.getType();
         switch (type) {
-            case "fire" -> {
+            case "Fire" -> {
                 FirePokemon fp = (FirePokemon) p;
                 System.out.println("Choose your attack");
                 System.out.println(fp.getAttacks());
                 return speler_A.nextLine();
             }
-            case "water" -> {
+            case "Water" -> {
                 WaterPokemon wp = (WaterPokemon) p;
                 System.out.println("Choose your attack");
                 System.out.println(wp.getAttacks());
                 return speler_A.nextLine();
             }
-            case "electric" -> {
+            case "Electric" -> {
                 ElectricPokemon ep = (ElectricPokemon) p;
                 System.out.println("Choose your attack");
                 System.out.println(ep.getAttacks());
@@ -153,7 +156,7 @@ public class PokemonGymImpl implements PokemonGym {
         String choosenAttack = attack.toLowerCase(Locale.ROOT);
 
         switch (pokemon.getType()) {
-            case "fire" -> {
+            case "Fire" -> {
                 fire = new FirePokemon(pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound());
                 switch (choosenAttack) {
                     case "inferno" -> fire.inferno(pokemon, gymPokemon);
@@ -162,22 +165,22 @@ public class PokemonGymImpl implements PokemonGym {
                     default -> fire.flameThrower(pokemon, gymPokemon);
                 }
             }
-            case "water" -> {
+            case "Water" -> {
                 water = new WaterPokemon(pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound());
                 switch (choosenAttack) {
                     case "surf" -> water.surf(pokemon, gymPokemon);
                     case "hydropump" -> water.hydroPump(pokemon, gymPokemon);
-                    case "hydrocanon" -> water.hydroCanon(pokemon, gymPokemon);
+                    case "hydrocanon" -> water.hydroCannon(pokemon, gymPokemon);
                     default -> water.rainDance(pokemon, gymPokemon);
                 }
             }
-            case "grass" -> {
+            case "Grass" -> {
                 grass = new GrassPokemon(pokemon.getName(), pokemon.getLevel(), pokemon.getHp(), pokemon.getFood(), pokemon.getSound());
                 switch (choosenAttack) {
                     case "leafstorm" -> grass.leafStorm(pokemon, gymPokemon);
                     case "solarbeam" -> grass.solarBeam(pokemon, gymPokemon);
                     case "leechseed" -> grass.leechSeed(pokemon, gymPokemon);
-                    default -> grass.leaveBlade(pokemon, gymPokemon);
+                    default -> grass.leafBlade(pokemon, gymPokemon);
                 }
             }
             default -> {
@@ -200,7 +203,7 @@ public class PokemonGymImpl implements PokemonGym {
         WaterPokemon water;
 
         switch (gymPokemon.getType()) {
-            case "fire" -> {
+            case "Fire" -> {
                 fire = new FirePokemon(gymPokemon.getName(), gymPokemon.getLevel(), gymPokemon.getHp(), gymPokemon.getFood(), gymPokemon.getSound());
                 String attack = fire.getAttacks().get(randomAttackByGymOwner());
                 switch (attack) {
@@ -210,24 +213,24 @@ public class PokemonGymImpl implements PokemonGym {
                     default -> fire.flameThrower(gymPokemon, pokemon);
                 }
             }
-            case "water" -> {
+            case "Water" -> {
                 water = new WaterPokemon(gymPokemon.getName(), gymPokemon.getLevel(), gymPokemon.getHp(), gymPokemon.getFood(), gymPokemon.getSound());
                 String attack = water.getAttacks().get(randomAttackByGymOwner());
                 switch (attack) {
                     case "surf" -> water.surf(gymPokemon, pokemon);
                     case "hydroPump" -> water.hydroPump(gymPokemon, pokemon);
-                    case "hydroCanon" -> water.hydroCanon(gymPokemon, pokemon);
+                    case "hydroCanon" -> water.hydroCannon(gymPokemon, pokemon);
                     default -> water.rainDance(gymPokemon, pokemon);
                 }
             }
-            case "grass" -> {
+            case "Grass" -> {
                 grass = new GrassPokemon(gymPokemon.getName(), gymPokemon.getLevel(), gymPokemon.getHp(), gymPokemon.getFood(), gymPokemon.getSound());
                 String attack = grass.getAttacks().get(randomAttackByGymOwner());
                 switch (attack) {
                     case "leafStorm" -> grass.leafStorm(gymPokemon, pokemon);
                     case "solarBeam" -> grass.solarBeam(gymPokemon, pokemon);
                     case "leechSeed" -> grass.leechSeed(gymPokemon, pokemon);
-                    default -> grass.leaveBlade(gymPokemon, pokemon);
+                    default -> grass.leafBlade(gymPokemon, pokemon);
                 }
             }
             default -> {

@@ -1,11 +1,13 @@
+import java.util.List;
+
 public class PokemonGymOwner extends PokemonTrainer{
 
+    private String town;
 
-    public PokemonGymOwner(String ownerName, String town, List<Pokemon> pokemons) {
-        super(ownerName, town, pokemons)
-        this.ownerName = ownerName;
+
+    public PokemonGymOwner(String name, String town, List<Pokemon> pokemons) {
+        super(name, pokemons);
         this.town = town;
-        this.pokemons = pokemons;
     }
 
     public String getTown(){
@@ -13,6 +15,11 @@ public class PokemonGymOwner extends PokemonTrainer{
     }
 
     public String getName() {
-        return ownerName;
+        return name;
     }
+     public void setTown(){
+        this.town = town;
+     }
+
 }
+
